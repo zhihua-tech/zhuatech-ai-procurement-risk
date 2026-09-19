@@ -16,12 +16,17 @@
 | GET | `/records/export.csv` | 导出 UTF-8 CSV |
 | GET | `/sla-summary` | SLA、逾期、风险和人员工作量 |
 | POST | `/domain/decision` | 执行AI采购风险控制系统专属领域规则 |
+| POST | `/domain/supplier-award` | 多供应商加权评标、制裁拦截、份额分配与预算预警 |
 | GET/POST | `/enterprise/controls` | 企业控制项查询与幂等创建 |
 | POST | `/enterprise/controls/{id}/submit` | 提交复核 |
 | POST | `/admin/enterprise/controls/{id}/review` | 管理员审批或驳回 |
 | POST | `/enterprise/controls/{id}/documents` | 登记附件哈希及存储元数据 |
 | POST | `/enterprise/controls/{id}/complete` | 凭证完整后办结 |
 | POST | `/admin/enterprise/controls/{id}/sync` | 登记外部系统回执 |
+
+## 供应商评标与授标
+
+`/domain/supplier-award` 接收采购数量、预算、最大供应商份额、评标权重和报价列表。系统先执行合规与制裁否决，再按价格、质量、交期和风险评分分配建议份额。
 
 ## 领域决策字段
 

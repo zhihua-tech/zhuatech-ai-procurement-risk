@@ -1,0 +1,53 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "riskScore": "#5.35",
+      "certificateDays": "#434",
+      "uncovered": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "creditLimit": "0"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "uncovered": "#1000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "certificateEnd": "2026-10-22"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "sharePct": "100",
+      "latePct": "100",
+      "rejectPct": "100"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "riskScore": "#100"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "certificateEnd": "2026-11-22"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "certificateDays": "#30"
+    },
+    "error": false
+  }
+]
